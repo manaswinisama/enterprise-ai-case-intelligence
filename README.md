@@ -6,6 +6,7 @@ ProcessIQ is an enterprise-grade decision-support platform engineered to transfo
 
 ## 🏗️ System Architecture
 
+
 ```mermaid
 graph TD
     UI[React + Vite Frontend Dashboard] -->|REST API Requests| API[FastAPI Gateway]
@@ -28,7 +29,8 @@ graph TD
 
     SVC --> DB[(SQLite / PostgreSQL ORM)]
     SVC --> REP[Executive Decision Brief]
-    REP --> UI```
+    REP --> UI
+    ```
 
      Key CapabilitiesActivity-Level Decomposition & Classification: Breaks down end-to-end workflows into discrete tasks and evaluates them across AI Suitability, Automation Feasibility, and Human Oversight needs.Explainable Multi-Factor Prioritization: Replaces black-box scoring with an explainable 5-dimension mathematical model.Strategic 2×2 Portfolio Matrix: Automatically maps organizational processes across four quadrants (Quick Wins, Strategic Bets, Operational Wins, Re-evaluate/Defer).Human-in-the-Loop (HITL) Governance: Detects regulatory, financial, and decision risks requiring mandatory human oversight.Executive Decision Brief: Generates clean, exportable PDF/print summaries for enterprise leadership.📐 Scoring Methodology & Decision MathThe platform evaluates processes across five normalized dimensions ($1.0$ to $5.0$ scale):$I$ (Business Impact): Evaluates volume, cycle time reduction, and operational value.$S$ (AI Suitability): Measures cognitive complexity, unstructured data handling, and NLP/Vision requirements.$F$ (Automation Feasibility): Assesses determinism, rule consistency, and digital data readiness.$E$ (Implementation Effort): Evaluates system touchpoints, integrations, and architectural complexity.$R$ (Governance & Risk): Quantifies regulatory exposure, compliance requirements, and human checkpoint necessity.$$\text{Priority Score} = \min\left(98, \; \max\left(25, \; \left[\frac{I \times S \times F}{E \times R} \times \frac{1}{\kappa}\right] \times 100\right)\right)$$(Where $\kappa = 8.5$ serves as the empirical normalization constant across enterprise benchmark distributions.)🛠️ Technology StackFrontend: React 18, Vite, JavaScript (ES6+), CSS3 Enterprise Design TokensBackend: Python 3.10+, FastAPI, Pydantic v2, UvicornData Layer: SQLite (development) via SQLAlchemy ORM (architected for drop-in PostgreSQL migration)Intelligence Layer: Rule-based heuristic classification and multi-factor analytical scoring pipelines📂 Project Structureenterprise-ai-case-intelligence/
 ├── backend/
