@@ -2,19 +2,21 @@
 
 > **Transform business processes into explainable AI and automation decisions.**
 
-ProcessIQ is an enterprise-grade AI decision-support platform designed to analyze business workflows, identify automation and AI opportunities, evaluate implementation feasibility and risk, and prioritize initiatives using an explainable multi-factor scoring framework.
+ProcessIQ is an enterprise AI decision-support platform designed to analyze business workflows, identify AI and automation opportunities, evaluate implementation feasibility and risk, and prioritize initiatives using an explainable multi-factor scoring framework.
 
-Instead of treating an entire business process as a single automation candidate, ProcessIQ decomposes workflows into individual activities and evaluates each activity for:
+Instead of evaluating an entire business process as a single automation candidate, ProcessIQ breaks the workflow into individual activities and evaluates each activity based on:
 
+* Business impact
 * AI suitability
 * Automation feasibility
 * Implementation effort
-* Business impact
 * Governance and risk
 * Human-in-the-Loop (HITL) requirements
 * Recommended technology approach
 
-The resulting intelligence is presented through an enterprise dashboard, strategic prioritization matrix, explainable score breakdown, and executive decision brief.
+The resulting analysis is presented through a structured enterprise dashboard and prioritization framework to help teams answer:
+
+> **What should we automate first, why, using which technology, and where should humans remain involved?**
 
 ---
 
@@ -22,17 +24,19 @@ The resulting intelligence is presented through an enterprise dashboard, strateg
 
 Organizations often have hundreds of business processes that could potentially benefit from AI or automation.
 
-However, identifying the right opportunities is difficult because teams need to answer questions such as:
+However, identifying the right opportunities is difficult because teams need to determine:
 
 * Which processes should be automated first?
-* Where can AI provide the most business value?
+* Where can AI provide the greatest business value?
 * Which activities require human intervention?
 * Should an activity use an LLM, RPA, IDP, or deterministic rules?
 * How much implementation effort will be required?
-* What compliance or operational risks exist?
-* Which initiatives are quick wins versus strategic investments?
+* What operational or governance risks exist?
+* Which opportunities are quick wins versus strategic investments?
 
-ProcessIQ addresses these questions through a structured intelligence and prioritization pipeline.
+Traditional assessments often depend heavily on manual analysis and subjective prioritization.
+
+**ProcessIQ provides a structured decision-support layer for this assessment.**
 
 ---
 
@@ -45,11 +49,11 @@ Business Process
 Activity Decomposition
        │
        ▼
-Activity Classification
+Activity Analysis
        │
        ├───────────────┐
        ▼               ▼
-AI Suitability     Automation Feasibility
+AI Suitability    Automation Feasibility
        │               │
        └───────┬───────┘
                ▼
@@ -61,19 +65,19 @@ AI Suitability     Automation Feasibility
        └── Deterministic Rules
                │
                ▼
-        HITL / Risk Analysis
+       HITL / Risk Analysis
                │
                ▼
        Multi-Factor Scoring
                │
                ▼
-       Priority Score
+         Priority Score
                │
                ▼
-       Strategic 2×2 Matrix
+       Strategic Prioritization
                │
                ▼
-      Executive Decision Brief
+       Decision Support
 ```
 
 ---
@@ -97,15 +101,17 @@ Invoice Processing
 6. Process payment
 ```
 
-Each activity can then be evaluated independently.
+Each activity can be evaluated independently.
+
+This is important because different activities within the same process may require completely different automation strategies.
 
 ---
 
 ## 2. AI Opportunity Identification
 
-The platform identifies activities that are strong candidates for AI or automation.
+ProcessIQ identifies activities that are suitable candidates for AI or automation.
 
-Examples include:
+Potential opportunities include:
 
 * Document extraction
 * Data validation
@@ -117,21 +123,25 @@ Examples include:
 * Text summarization
 * Document matching
 
+The objective is **not to force AI into every activity**.
+
+Instead, the platform evaluates where AI or automation is appropriate.
+
 ---
 
 ## 3. Technology Mapping
 
-ProcessIQ recommends an appropriate technology pattern based on the characteristics of an activity.
+ProcessIQ maps activities to appropriate technology patterns.
 
-| Technology            | Typical Use Case                                          |
-| --------------------- | --------------------------------------------------------- |
-| **IDP**               | Extracting information from invoices, forms and documents |
-| **RPA**               | Repetitive UI-based tasks and system interactions         |
-| **LLM**               | Unstructured text, summarization and reasoning assistance |
-| **Rules Engine**      | Deterministic business validation                         |
-| **Human-in-the-Loop** | High-risk or approval-based decisions                     |
+| Technology              | Typical Use Case                                          |
+| ----------------------- | --------------------------------------------------------- |
+| **IDP**                 | Extracting information from invoices, forms and documents |
+| **RPA**                 | Repetitive UI-based tasks and system interactions         |
+| **LLM**                 | Unstructured text, summarization and reasoning assistance |
+| **Deterministic Rules** | Predictable business validation and policy checks         |
+| **Human-in-the-Loop**   | High-risk, approval-based or exception scenarios          |
 
-The objective is not to force AI into every activity, but to identify the **most appropriate technology for each task**.
+The technology recommendation is intended to support **technology selection rather than technology replacement**.
 
 ---
 
@@ -139,9 +149,9 @@ The objective is not to force AI into every activity, but to identify the **most
 
 Enterprise automation requires appropriate human oversight.
 
-ProcessIQ identifies activities where human approval or review should remain mandatory.
+ProcessIQ identifies scenarios where human review or approval should remain part of the workflow.
 
-Potential HITL triggers include:
+Potential HITL conditions include:
 
 * Financial approvals
 * Regulatory decisions
@@ -157,39 +167,37 @@ Example:
 Invoice Approval
        │
        ▼
-AI validates invoice
+AI-assisted validation
        │
        ▼
 Risk / confidence evaluation
        │
        ▼
-Human approval required
+Human approval
        │
        ▼
 Payment processing
 ```
 
-This allows organizations to pursue automation without eliminating necessary governance controls.
+This supports a **human-supervised automation model** rather than unrestricted automation.
 
 ---
 
 # 📊 Explainable Scoring Framework
 
-ProcessIQ evaluates processes using five normalized dimensions on a **1.0–5.0 scale**.
+ProcessIQ evaluates opportunities using five normalized dimensions on a **1.0–5.0 scale**.
 
-| Dimension                      | Description                                             |
-| ------------------------------ | ------------------------------------------------------- |
-| **I — Business Impact**        | Expected operational and business value                 |
-| **S — AI Suitability**         | Suitability for AI-based capabilities                   |
-| **F — Automation Feasibility** | Technical and operational feasibility                   |
-| **E — Implementation Effort**  | Complexity, integrations and engineering effort         |
-| **R — Governance & Risk**      | Compliance, regulatory and human oversight requirements |
-
----
+| Dimension                      | Description                                         |
+| ------------------------------ | --------------------------------------------------- |
+| **I — Business Impact**        | Expected operational and business value             |
+| **S — AI Suitability**         | Suitability for AI-based capabilities               |
+| **F — Automation Feasibility** | Technical and operational feasibility               |
+| **E — Implementation Effort**  | Engineering, integration and operational complexity |
+| **R — Governance & Risk**      | Compliance, risk and human-oversight requirements   |
 
 ## Priority Score
 
-ProcessIQ uses the following explainable mathematical model:
+The current decision engine uses the following explainable scoring model:
 
 ```text
 Priority Score =
@@ -208,61 +216,61 @@ Where:
 κ = 8.5
 ```
 
-The normalization constant provides a consistent scoring range across enterprise process evaluations.
-
-The final score is constrained between:
+The result is bounded between:
 
 ```text
 25 → 98
 ```
 
-This prevents extreme mathematical outputs from producing misleading portfolio rankings.
+The scoring model is intentionally transparent so that users can understand the factors contributing to a recommendation rather than receiving an unexplained black-box score.
+
+> **Important:** The current scoring engine is a deterministic decision framework. It is designed to provide explainable prioritization rather than claim predictive ML performance.
 
 ---
 
-# 🗺️ Strategic Portfolio Matrix
+# 🗺️ Strategic Portfolio Prioritization
 
-ProcessIQ maps analyzed processes into a 2×2 strategic portfolio.
+Analyzed opportunities can be positioned conceptually using a 2×2 portfolio framework based on business impact and implementation effort.
 
 ```text
-                    HIGH IMPACT
+                     HIGH IMPACT
                          │
-          STRATEGIC      │       QUICK
-            BETS         │       WINS
+       STRATEGIC         │          QUICK
+          BETS           │          WINS
                          │
-       ──────────────────┼──────────────────
+─────────────────────────┼────────────────────────
                          │
-        RE-EVALUATE      │    OPERATIONAL
-          / DEFER        │       WINS
+      RE-EVALUATE        │       OPERATIONAL
+        / DEFER          │          WINS
                          │
-                    LOW IMPACT
-                         
-             HIGH EFFORT       LOW EFFORT
+                     LOW IMPACT
+
+              HIGH EFFORT       LOW EFFORT
 ```
 
 ### Quick Wins
 
-High business impact with relatively low implementation effort.
+High-impact opportunities with relatively low implementation effort.
 
-Recommended for immediate execution.
+**Recommended action:** prioritize for near-term execution.
 
 ### Strategic Bets
 
-High-impact initiatives that require significant investment.
+High-impact initiatives requiring significant investment.
 
-Recommended for strategic transformation programs.
+**Recommended action:** evaluate as strategic transformation initiatives.
 
 ### Operational Wins
 
 Lower-impact opportunities that are relatively easy to implement.
 
-Useful for incremental efficiency improvements.
+**Recommended action:** use for incremental operational improvements.
 
 ### Re-evaluate / Defer
 
-Low-impact opportunities with comparatively high effort or risk.
+Lower-value opportunities with comparatively high effort or risk.
 
-These should generally be postponed or reassessed.
+**Recommended action:** reassess before allocating significant resources.
 
 ---
 
@@ -271,38 +279,52 @@ These should generally be postponed or reassessed.
 ```mermaid
 graph TD
 
-    UI[React + Vite Frontend Dashboard]
-        -->|REST API| API[FastAPI Gateway]
+    UI[React + Vite Frontend]
+        -->|REST API| API[FastAPI Backend]
 
     API --> SVC[Process Intelligence Service]
 
-    subgraph Core Intelligence Engine
-        SVC --> CLS[Activity Classifier & NLP Heuristics]
+    subgraph Intelligence Layer
+        SVC --> CLS[Activity Classification]
         CLS --> TECH[Technology Mapping]
-        CLS --> HITL[HITL Risk & Compliance Analyzer]
-        SVC --> SCORE[Multi-Factor Decision Engine]
+        CLS --> HITL[HITL / Risk Analysis]
+        SVC --> SCORE[Decision & Scoring Engine]
     end
 
-    subgraph Technology Mapping
+    subgraph Technology Patterns
         TECH --> IDP[IDP]
         TECH --> RPA[RPA]
         TECH --> LLM[LLM]
         TECH --> RULES[Deterministic Rules]
     end
 
-    subgraph Strategic Portfolio
-        SCORE --> MTRX[2x2 Strategic Matrix]
-        MTRX --> QW[Quick Wins]
-        MTRX --> SB[Strategic Bets]
-        MTRX --> OW[Operational Wins]
-        MTRX --> DF[Re-evaluate / Defer]
-    end
+    SCORE --> PORT[Prioritization]
+    PORT --> UI
 
-    SVC --> DB[(SQLite / PostgreSQL)]
-    SVC --> REP[Executive Decision Brief]
-
-    REP --> UI
+    SVC --> DB[(SQLite)]
 ```
+
+### Architecture Flow
+
+```text
+React Frontend
+      ↓
+FastAPI REST API
+      ↓
+Process Intelligence Layer
+      ↓
+Activity Analysis
+      ↓
+Technology + HITL Assessment
+      ↓
+Scoring Engine
+      ↓
+Prioritization
+      ↓
+Dashboard
+```
+
+The architecture separates the presentation layer, API layer, intelligence logic and persistence layer, making the application easier to extend.
 
 ---
 
@@ -314,18 +336,17 @@ graph TD
 * Vite
 * JavaScript ES6+
 * CSS3
-* Enterprise Design System
 
 ## Backend
 
 * Python 3.10+
 * FastAPI
-* Pydantic v2
+* Pydantic
 * Uvicorn
 
 ## Data Layer
 
-* SQLite for development
+* SQLite
 * SQLAlchemy ORM
 * PostgreSQL-ready architecture
 
@@ -334,7 +355,7 @@ graph TD
 * Rule-based activity classification
 * NLP heuristics
 * Technology mapping
-* HITL risk analysis
+* HITL analysis
 * Multi-factor scoring
 * Strategic prioritization
 
@@ -375,7 +396,7 @@ enterprise-ai-case-intelligence/
 
 ## Prerequisites
 
-Make sure the following are installed:
+Install:
 
 * Python 3.10+
 * Node.js 18+
@@ -384,23 +405,23 @@ Make sure the following are installed:
 
 ---
 
-# 1. Clone the Repository
+## 1. Clone the Repository
 
 ```bash
 git clone <YOUR_GITHUB_REPOSITORY_URL>
+
 cd enterprise-ai-case-intelligence
 ```
 
 ---
 
-# 2. Backend Setup
-
-Create and activate the virtual environment.
+## 2. Backend Setup
 
 ### Windows PowerShell
 
 ```powershell
 python -m venv venv
+
 .\venv\Scripts\activate
 ```
 
@@ -412,15 +433,13 @@ pip install -r requirements.txt
 
 ---
 
-# 3. Seed the Database
-
-Run the seed script to populate ProcessIQ with sample enterprise workflows.
+## 3. Seed Sample Data
 
 ```powershell
 python backend/seed_data.py
 ```
 
-If your backend files are located directly in the project root, use:
+If `seed_data.py` is located in the project root:
 
 ```powershell
 python seed_data.py
@@ -428,13 +447,13 @@ python seed_data.py
 
 ---
 
-# 4. Start the Backend
+## 4. Start the Backend
 
 ```powershell
 uvicorn backend.main:app --reload --port 8000
 ```
 
-Or, if `main.py` is in the project root:
+If `main.py` is located in the project root:
 
 ```powershell
 uvicorn main:app --reload --port 8000
@@ -446,7 +465,7 @@ Backend:
 http://127.0.0.1:8000
 ```
 
-Swagger API documentation:
+Swagger documentation:
 
 ```text
 http://127.0.0.1:8000/docs
@@ -454,22 +473,19 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# 5. Frontend Setup
+## 5. Start the Frontend
 
-Open another terminal.
+Open another terminal:
 
 ```powershell
 cd frontend
+
 npm install
-```
 
-Start the Vite development server:
-
-```powershell
 npm run dev
 ```
 
-The dashboard will be available at:
+The application will be available at:
 
 ```text
 http://localhost:5173
@@ -479,23 +495,23 @@ http://localhost:5173
 
 # 🔌 API Endpoints
 
-## Get All Processes
+## Get Processes
 
 ```http
 GET /processes
 ```
 
-Returns previously analyzed processes and their analysis metadata.
+Returns previously created processes and their analysis metadata.
 
 ---
 
-## Create a Process
+## Create Process
 
 ```http
 POST /processes
 ```
 
-Example request:
+Example:
 
 ```json
 {
@@ -515,15 +531,13 @@ Example request:
 
 ---
 
-## Analyze a Process
+## Analyze Process
 
 ```http
 POST /analyze/{process_id}
 ```
 
-Returns the intelligence analysis for the selected process.
-
-Example response structure:
+Example response:
 
 ```json
 {
@@ -551,6 +565,7 @@ Consider an invoice-processing workflow:
 
 ```text
 Invoice Processing
+
         │
         ├── Receive invoice
         │
@@ -565,24 +580,24 @@ Invoice Processing
         └── Process payment
 ```
 
-ProcessIQ may identify:
+A potential technology mapping could be:
 
-| Activity         | Technology          | HITL                         |
-| ---------------- | ------------------- | ---------------------------- |
-| Receive invoice  | RPA / Workflow      | No                           |
-| Extract details  | IDP                 | No                           |
-| Validate invoice | Rules + AI          | Exception-based              |
-| Match PO         | Rules / AI          | Exception-based              |
-| Approve invoice  | AI Decision Support | **Yes**                      |
-| Process payment  | RPA / Workflow      | **Yes for high-value cases** |
+| Activity         | Technology            | HITL                         |
+| ---------------- | --------------------- | ---------------------------- |
+| Receive invoice  | RPA / Workflow        | No                           |
+| Extract details  | IDP                   | No                           |
+| Validate invoice | Rules + AI assistance | Exception-based              |
+| Match PO         | Rules / AI assistance | Exception-based              |
+| Approve invoice  | AI Decision Support   | **Yes**                      |
+| Process payment  | RPA / Workflow        | **Yes for high-value cases** |
 
-This produces a more realistic automation strategy than simply labeling the entire process as "AI suitable."
+This illustrates the central principle of ProcessIQ:
+
+> **An entire process does not need one automation strategy. Individual activities should be evaluated according to their characteristics.**
 
 ---
 
 # 📈 Enterprise Decision Flow
-
-ProcessIQ is designed to support the complete journey from process discovery to investment prioritization.
 
 ```text
 DISCOVER
@@ -607,11 +622,11 @@ Calculate Explainable Priority
    ↓
 PRIORITIZE
    ↓
-Map To Strategic Portfolio
+Map Opportunities
    ↓
 DECIDE
    ↓
-Generate Executive Decision Brief
+Select Appropriate Automation Strategy
 ```
 
 ---
@@ -620,49 +635,39 @@ Generate Executive Decision Brief
 
 ## Explainability
 
-The scoring framework exposes the dimensions contributing to a process's priority score.
+The scoring framework exposes the dimensions contributing to the priority score.
 
-This helps decision-makers understand:
+This allows decision-makers to understand:
 
 ```text
-Why was this process prioritized?
+Why was this opportunity prioritized?
 ```
 
-rather than simply receiving a black-box prediction.
-
----
+rather than receiving only a black-box recommendation.
 
 ## Auditability
 
-ProcessIQ maintains structured analysis data so that process evaluations can be reviewed and re-evaluated.
-
----
+Structured analysis data can be stored and reviewed so that process evaluations can be revisited.
 
 ## Human Oversight
 
-High-risk activities can be explicitly marked for human review.
+High-risk activities can be identified for human review or approval.
 
-This supports responsible AI adoption in enterprise environments.
+## Database Abstraction
 
----
+SQLAlchemy provides a database abstraction layer.
 
-## Database Agnostic Design
-
-SQLAlchemy provides an abstraction layer between the application and database.
-
-Development:
+Current development:
 
 ```text
 SQLite
 ```
 
-Production:
+Potential production deployment:
 
 ```text
 PostgreSQL
 ```
-
-This allows the data layer to evolve without requiring major changes to the intelligence layer.
 
 ---
 
@@ -687,20 +692,28 @@ This allows the data layer to evolve without requiring major changes to the inte
 | Executive PDF export            | 🚧     |
 | PostgreSQL production migration | 🔜     |
 | Advanced ML/NLP models          | 🔜     |
+| LLM-powered process reasoning   | 🔜     |
+
+> **Status reflects the current prototype implementation. Future capabilities are intentionally identified separately rather than presented as completed functionality.**
 
 ---
 
 # 🔮 Future Enhancements
 
-### AI-Powered Process Understanding
+## LLM-Powered Process Understanding
 
-Integrate LLM-based reasoning to improve activity classification and recommendations.
+Introduce an LLM layer to interpret natural-language process descriptions and improve:
 
-### Process Mining
+* Activity decomposition
+* Activity classification
+* Technology recommendations
+* Reasoning explanations
 
-Support event-log data to discover real process execution patterns rather than relying only on manually entered workflows.
+## Process Mining
 
-### Advanced Risk Intelligence
+Use event-log data to discover actual process execution patterns rather than relying only on manually entered workflows.
+
+## Advanced Risk Intelligence
 
 Introduce configurable enterprise policies for:
 
@@ -710,11 +723,11 @@ Introduce configurable enterprise policies for:
 * Model confidence
 * Approval requirements
 
-### PostgreSQL Deployment
+## PostgreSQL Deployment
 
 Move production workloads from SQLite to PostgreSQL.
 
-### Authentication & RBAC
+## Authentication & RBAC
 
 Introduce enterprise roles such as:
 
@@ -727,9 +740,9 @@ Executive
 Auditor
 ```
 
-### Executive Analytics
+## Executive Analytics
 
-Add portfolio-level dashboards showing:
+Add portfolio-level analytics for:
 
 * Total automation opportunities
 * Estimated business impact
@@ -743,7 +756,7 @@ Add portfolio-level dashboards showing:
 
 # 🎯 Project Objectives
 
-ProcessIQ is designed to demonstrate how AI can be applied not merely to generate content or predictions, but to support **enterprise-level decision making**.
+ProcessIQ demonstrates how AI can be applied not merely to generate content or predictions, but to support **enterprise-level decision making**.
 
 The project focuses on:
 
@@ -760,25 +773,15 @@ The project focuses on:
 
 # 💡 Why ProcessIQ?
 
-Traditional automation assessments often rely heavily on manual consulting analysis.
+Traditional automation assessments often focus on:
 
-ProcessIQ introduces a structured intelligence layer that helps organizations move from:
+> **"What can we automate?"**
 
-```text
-"What can we automate?"
-```
+ProcessIQ reframes the question as:
 
-to:
+> **"What should we automate first, why should we automate it, what technology should we use, what risks exist, and where should humans remain involved?"**
 
-```text
-"What should we automate first,
-why should we automate it,
-what technology should we use,
-what risks exist,
-and where should humans remain involved?"
-```
-
-That distinction makes ProcessIQ a **decision-support platform**, rather than simply an automation recommendation tool.
+This makes ProcessIQ a **decision-support platform**, rather than simply an automation recommendation tool.
 
 ---
 
@@ -789,7 +792,7 @@ That distinction makes ProcessIQ a **decision-support platform**, rather than si
 B.Tech — Computer Science & Engineering
 Specialization: Artificial Intelligence & Machine Learning
 
-Interested in:
+Areas of interest:
 
 * Artificial Intelligence
 * Machine Learning
@@ -806,8 +809,8 @@ This project is developed for educational, research, portfolio, and enterprise A
 
 ---
 
-## ⭐ ProcessIQ
+# ⭐ ProcessIQ
 
-**From Business Process → AI Intelligence → Strategic Decision**
+> **From Business Process → AI Intelligence → Strategic Decision**
 
-> Analyze. Explain. Prioritize. Transform.
+**Analyze. Explain. Prioritize. Transform.**
